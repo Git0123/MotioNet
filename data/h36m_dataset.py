@@ -19,7 +19,7 @@ class h36m_dataset(Dataset):
         self.is_train = is_train
         subjects = h36m_utils.TRAIN_SUBJECTS if is_train else h36m_utils.TEST_SUBJECTS
 
-        positions_set = np.load('./data/data_h36m.npz', allow_pickle=True)['positions_3d'].item()
+        positions_set = np.load('../drive/My Drive/VideoToVMD/data/data_h36m.npz', allow_pickle=True)['positions_3d'].item()
         if config.trainer.data == 'cpn':
             positions_set_2d = np.load('./data/data_2d_h36m_cpn_ft_h36m_dbb.npz', allow_pickle=True)['positions_2d'].item()
         elif config.trainer.data == 'detectron':
