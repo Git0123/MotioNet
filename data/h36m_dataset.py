@@ -78,7 +78,7 @@ class h36m_dataset(Dataset):
                 self.poses_2d = np.concatenate([self.poses_2d, posed_2d_flip], axis=0)
                 self.poses_2d_pixel = np.concatenate([self.poses_2d_pixel, poses_2d_pixel_flip], axis=0)
             if config.trainer.use_loss_D:
-                rotations_set = np.load('./data/data_cmu.npz', allow_pickle=True)['rotations']
+                rotations_set = np.load('../drive/My Drive/VideoToVMD/data/data_cmu.npz', allow_pickle=True)['rotations']
                 self.r_frame_numbers = [r_array.shape[0] for r_array in rotations_set]
                 self.rotations = np.concatenate(rotations_set, axis=0)
                 self.rotations = self.rotations.reshape((self.rotations.shape[0], -1))
